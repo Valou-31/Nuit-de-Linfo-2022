@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Forum
+{% endblock %}
+
+{% block body %}
+<style>
+    #title{
+        text-align:center;
+
+    }
+
+    #title a{
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+
+    #title:hover{
+        transform: rotate(2deg);
+    }
+
+    body{
+        background-color: antiquewhite;
+    }
+
+    #container{
+      margin-inline: 10%;
+      margin-bottom: 10px;
+      max-height: 200px;
+    }
+
+    #formSend{
+      margin-top: 50px;
+      margin-inline: 10%;
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: whitesmoke;
+    }
+
+</style>
+<br>
+<h1 id="title"><a href="/" >SEXPLOREUR</a></h1>
+<br>
+<div class="alert alert-warning" role="alert">
+  <h2>Forum: {{name}}</h2>
+</div>
+
+<h2 style="margin-left: 10%;">Messages : </h2>
+
+<div id="container" class="overflow-auto">
+  <ul class="list-group">
+{% for row in rowMsgs%}
+    {% if row[2]%}
+      <li class="list-group-item"> Admin : {{ row[1] }}</li>
+    {% else %}
+      <li class="list-group-item"> Anonymous : {{ row[1] }}</li>
+    {% endif %}
+    
+{% endfor %}
+</ul>
+</div>
+
+
+<div id="formSend">
+  <form action = "{{ url_for('addmsg') }}" method = "POST">
+      <div class="form-group">
+        
+        <input type="text" class="form-control" name="message" placeholder="Ecrire votre message">
+
+        <style>
+
+          #hide{display: none;}
+        </style>
+        <input id='hide' type="text" class="form-control" name="id" value={{id}}>
+        
+
+      </div><br>
+      <button type="submit" class="btn btn-success">Envoyer</button>
+  </form>
+</div>
+
+
+<div style="display: flex; justify-content: center;  margin-top: 1%; margin-bottom: 1%;">
+  <button type="button" class="btn btn-success" onclick="window.location.href='/'">Retourner à la page d'accueil.</button>
+  </div>
+
+{% endblock %}

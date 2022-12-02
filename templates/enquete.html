@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bienvenue Inspect.eur.rice !
+{% endblock %}
+
+
+{% block body %}
+
+    <script>
+        let clickCounter =0;
+        var intervalId = setInterval(function() { clickCounter =0}, 1500);
+
+        function resetCounter()
+        {
+            clickCounter = 0;
+        }
+
+        function EasterEgg()
+        {
+            
+            clickCounter+= 1;
+            if (clickCounter == 5)
+            {
+                window.location.replace("/enquete/easterEgg");
+            }
+        }
+    </script>
+
+
+
+    <h1 style="text-align: center;  background-color:rgb(0, 0, 0);
+    padding: 0.1em 0.2em 0.2em 0.2em; color:white">L'enquête du cul: trouvez qui est le VIH ?</h1>
+
+    <body style="background: rgb(205,132,255);
+    background: radial-gradient(circle, rgba(205,132,255,1) 0%, rgba(255,95,95,1) 50%, rgba(255,202,128,1) 100%);"></body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <div style="display: flex; justify-content: space-around;  margin-top: 2%;">
+        <button type="button" class="btn btn-light btn-lg" id="answer1">C'est pas moi</button>
+        <button type="button" class="btn btn-light btn-lg" id="answer2">UwU</button>
+        <button type="button" class="btn btn-light btn-lg" id="answer3">Je suis trop mignon pour être <br> coupable, monsieur ljuge</button>
+        <button type="button" class="btn btn-light btn-lg" id="answer4">Wallah c'est pas moi</button>
+        <button type="button" class="btn btn-light btn-lg" id="answer5">Pitié M'sieur pitié,<br> me cliquez pas dessus !</button>
+        <button type="button" class="btn btn-light btn-lg" id="answer6">...</button>
+    </div>
+    
+        <div style="display: flex; justify-content: space-between; margin-top: 2%;">
+
+            <div style="display: flex; justify-content:center">
+                <img style="width: 80%;" src="static\img\virus1.png" />
+            </div>
+
+            <div style="display: flex; justify-content:center">
+                <img style="width: 80%;" src="static\img\virus2.png" />
+            </div>
+
+            <div style="display: flex; justify-content:center">
+                <img style="width: 80%;" src="static\img\virus3.png" />
+            </div>
+            
+            <div style="display: flex; justify-content:center">
+                <img style="width: 80%;" src="static\img\virus4.png" />
+            </div>
+
+            <div style="display: flex; justify-content:center">
+                <a style="display: flex; justify-content:center; cursor:default;" onclick="EasterEgg()" target="_blank"><img style="width: 80%;" src="static\img\virus5.png" /> </a>
+            </div>
+
+            <div style="display: flex; justify-content:center">
+                <img style="width: 80%;" src="static\img\virus6.png" />
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-around; margin-top: 2%;">
+            <button type="button" class="btn btn-danger btn-lg" id="kill1">Accuser</button>
+            <button type="button" class="btn btn-danger btn-lg" id="kill2">Accuser</button>
+            <button type="button" class="btn btn-danger btn-lg" id="kill3">Accuser</button>
+            <button type="button" class="btn btn-danger btn-lg" id="kill4">Accuser</button>
+            <button type="button" class="btn btn-danger btn-lg" id="kill5">Accuser</button>
+            <button type="button" class="btn btn-danger btn-lg" id="kill6">Accuser</button>
+        </div>
+        
+        <h1 style="text-align: center;  margin-top: 3%; background-color:rgb(0, 0, 0);
+        padding: 0.1em 0.2em 0.2em 0.2em; color:white">Vos questions: </h1>
+
+        <div style="display: flex; justify-content: space-around;  margin-top: 2%; margin-bottom: 5%;">
+            <button type="button" class="btn btn-primary btn-lg" id="q1">Question 1</button>
+            <button type="button" class="btn btn-primary btn-lg" id="q2">Question 2</button>
+            <button type="button" class="btn btn-primary btn-lg" id="q3">Question 3</button>
+        </div>
+        
+        <div style="display: flex; justify-content: center;  margin-top: 1%; margin-bottom: 1%;">
+        <button type="button" class="btn btn-success" onclick="window.location.href='/'">Retourner à la page d'accueil.</button>
+        </div>
+
+
+
+<script>
+
+    window.onload = function(){  
+        document.getElementById("q1").innerHTML = questions[0];
+        document.getElementById("q2").innerHTML = questions[1];
+        document.getElementById("q3").innerHTML = questions[2];
+    }
+
+    currentQuestion = 2;
+
+    var questions = [
+        "Est ce que l'on t'appelle<br> aussi la chtouille ?",
+        "Combien de cas par an ?",
+        "Est ce que tu est due au papillomavirus (HPV) ?",
+        "Est ce que tu est une verrue génitale ?",
+        "Est ce que ton stade<br> le plus avancé  est le syndrome<br> d’immunodéficience acquise (sida) ?",
+        "Est ce que tu es une pandémie ?",
+        "Est ce que tu peux apparaitre sur la bouche ?",
+        "Est ce que tu peux te transmettre lors d'une fellation ?",
+        "Est ce que tu es asymptomatique<br> chez près de la moitié de la population ?"
+        ];
+
+
+        var answer_virus1 = [
+        "Oui c'est mon petit nom.",
+        "15.000 cas de gonorrhées par an...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+    ];
+
+        var answer_virus2 = [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "Yep, tu te souviens de moi ?",
+        "...",
+        "...",
+        "..."];
+
+        var answer_virus3 = [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+    "Je suis asymptomatique chez<br> près de la moitié des personnes"];
+
+        var answer_virus4 = [
+        "...",
+        "...",
+        "Oui je suis due au papillomavirus (HPV).",
+        "Oui. :(",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."];
+
+        var answer_virus5 = [
+        "...",
+        "...",
+        "...",
+        "...",
+        "Exactement et ça fait des dégâts!",
+        "...",
+        "...",
+        "Je peux me transmettre lors d'une fellation <br> (essentiellement en cas d’éjaculation dans la bouche).",
+        "..."];
+        
+        var answer_virus6 = [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "Je peux me situer au niveau de la bouche,<br> mais aussi au niveau des yeux,<br> des organes génitaux...",
+        "...",
+        "..."];
+        
+
+
+    document.getElementById("q1").addEventListener("click", function() {
+        
+        executeQuestion(findIndexElement(document.getElementById("q1").innerHTML));
+
+        if(currentQuestion < questions.length)
+        {
+            document.getElementById("q1").innerHTML = questions[currentQuestion];
+
+            currentQuestion++;
+        }
+        else{
+            document.getElementById("q1").remove();
+        }
+    });   
+
+    document.getElementById("q2").addEventListener("click", function() {
+        
+        executeQuestion(findIndexElement(document.getElementById("q2").innerHTML));
+
+        if(currentQuestion < questions.length)
+        {
+            document.getElementById("q2").innerHTML = questions[currentQuestion];
+
+            currentQuestion++;
+        }
+        else{
+            document.getElementById("q2").remove();
+        }
+    });   
+
+    document.getElementById("q3").addEventListener("click", function() {
+        
+        executeQuestion(findIndexElement(document.getElementById("q3").innerHTML));
+
+        if(currentQuestion < questions.length)
+        {
+            document.getElementById("q3").innerHTML = questions[currentQuestion];
+
+            currentQuestion++;
+        }
+        else{
+            document.getElementById("q3").remove();
+        }
+    });   
+
+
+    function findIndexElement(element){
+        var qIndex = 0;
+
+        for (let index = 0; index <= questions.length; index++) {
+            if(questions[index] == element)
+            {
+                qIndex = index;
+                break;
+            }
+        }
+
+        return qIndex;
+    }
+
+    function resetAnswers()
+    {
+        document.getElementById("answer1").innerHTML = "...";
+        document.getElementById("answer2").innerHTML = "...";
+        document.getElementById("answer3").innerHTML = "...";
+        document.getElementById("answer4").innerHTML = "...";
+        document.getElementById("answer5").innerHTML = "...";
+        document.getElementById("answer6").innerHTML = "...";
+    }
+
+
+
+    document.getElementById("kill1").addEventListener("click", function() {
+        executeAccusation(1);
+    });  
+    document.getElementById("kill2").addEventListener("click", function() {
+        executeAccusation(2);
+    });  
+    document.getElementById("kill3").addEventListener("click", function() {
+        executeAccusation(3);
+    });  
+    document.getElementById("kill4").addEventListener("click", function() {
+        executeAccusation(4);
+    });  
+    document.getElementById("kill5").addEventListener("click", function() {
+        executeAccusation(5);
+    });  
+    document.getElementById("kill6").addEventListener("click", function() {
+        executeAccusation(6);
+    }); 
+
+
+    function executeAccusation(qNb)
+    {
+        resetAnswers();
+
+        switch (qNb) {
+                case 1:
+                    document.getElementById("answer1").innerHTML = "Je suis la Gonorrhé wouhou.";
+                break;
+                case 2:
+                    document.getElementById("answer2").innerHTML = "Je suis le COVID,<br> tu me reconnais pas ?";
+                break;
+                case 3:
+                    document.getElementById("answer3").innerHTML = "Moi, c'est la chlamydia UwU";
+                break;
+                case 4:
+                    document.getElementById("answer4").innerHTML = "Mon petit nom c'est Condylome ;)";
+                break;
+                case 5:
+                    document.getElementById("answer5").innerHTML = "C'est moi ouais, je suis le VIH...";
+                break;
+                case 6:
+                    document.getElementById("answer6").innerHTML = "ERROR 404: T'es un looser, <br> c'est pas moi. <br> Je suis l'herpès.";
+                break;
+        
+            default:
+                break;
+        }
+    }
+
+
+    function executeQuestion(qNb)
+    {
+        resetAnswers();
+
+        console.log(qNb)
+
+        document.getElementById("answer1").innerHTML = answer_virus1[qNb];
+        document.getElementById("answer2").innerHTML = answer_virus2[qNb];
+        document.getElementById("answer3").innerHTML = answer_virus3[qNb];
+        document.getElementById("answer4").innerHTML = answer_virus4[qNb];
+        document.getElementById("answer5").innerHTML = answer_virus5[qNb];
+        document.getElementById("answer6").innerHTML = answer_virus6[qNb];
+    }
+
+
+</script>
+
+
+{% endblock %}

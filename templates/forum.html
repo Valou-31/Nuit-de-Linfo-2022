@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Forum
+{% endblock %}
+
+{% block body %}
+<body style="background-image: url('/static/img/Sans.png');background-repeat: no-repeat;background-position: center;">
+    <style>
+        #title{
+            text-align:center;
+
+        }
+
+        #title a{
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+        }
+
+        #title:hover{
+            transform: rotate(2deg);
+        }
+
+        body{
+            background-color: antiquewhite;
+        }
+
+        #container{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-inline: 10%;
+        }
+        
+
+
+    </style>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+
+
+    <div id="container">
+        <div class="list-group">
+            {% for row in rows %}
+
+                <a href=/forum/{{row[0]}} class="list-group-item list-group-item-action">{{row[1]}}</a>
+
+            {% endfor %}   
+        </div>
+    </div>
+
+    
+    <div style="display: flex; justify-content: center;  margin-top: 1%; margin-bottom: 1%;">
+        <button type="button" class="btn btn-success" onclick="window.location.href='/'">Retourner à la page d'accueil.</button>
+        </div>
+
+
+    <script>
+        function addLink() {
+            var strLink = "/superviseur/gestion/supprimerBat/"+document.getElementById("batiment").value;
+            document.getElementById("link").setAttribute("href",strLink);
+
+        }
+
+    </script>
+</body>
+
+
+{% endblock %}

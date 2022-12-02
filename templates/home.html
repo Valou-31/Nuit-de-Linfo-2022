@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Acceuil
+{% endblock %}
+
+{% block body %}
+<style> 
+    .mshow {
+      transition: width 3s;
+      transition-delay: 1s;
+    }
+    
+    .mshow:hover {
+      width: 350px;
+    }
+
+    .lien:hover {
+        text-decoration: overline;
+    }
+</style>
+<body onload="move('pillule')">
+    <script>
+        var dragValue;
+        function move(id){
+            var elem = document.getElementById("pillule");
+            elem.onmousedown = function(){
+                dragValue = elem;
+            }
+        }
+        document.onmouseup = function(e){
+            dragValue=null;
+        }
+        document.onmousemove =function(e){
+            var x = e.pageX;
+            var y = e.pageY;
+            dragValue.style.left = x + "px";
+            dragValue.style.top = y + "px";
+        }
+        
+    </script>
+
+
+    <div class="px-10 py-5 text-center" 
+        style="background-image: url('/static/img/back_ground.png');background-repeat: no-repeat; 
+        background-position: center;
+        background-color: #D9AB9A;
+        box-shadow: #261B14;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button onclick="move()" id="pillule" style="position:absolute;background: none;border: none;margin-left:90px ;">
+            <img src="/static/img/pilule.png">
+        </button>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="display: flex; flex-direction: column;">
+            <h1 class="display-4 fw-bold" style="margin-top:100px;margin-left: 250px ;margin-bottom: 75px;">
+                <div>
+                    <div style="display:flex ;">
+                        <div style="color: #D98289;">Sex</div>
+                        <div>'primer </div>
+                    </div>
+                    <p>est important !</p>
+                </div>
+            </h1>
+            <img class="mshow" src="/static/img/haut_parleur.png" width="200px" style="margin-left: 50px;">
+        </div>
+        <div style="display:flex ; flex-direction:column; width: 50%;">
+            <img class="mshow" src="/static/img/imoji_directive.png" width="250px" style="align-self:end;">
+            <a  class="btn" href="/forum" style="margin-inline: 200px;margin-top: 50px;background-color: #261B14;color: #D98289;font-size: 50px;border-radius: 75px;" >PAR ICI</a>
+        </div>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="display:flex ; flex-direction:column; width: 50%;">
+            <img class="mshow" src="/static/img/ampoule_vih.png" width="200px" style="align-self:start;margin-top: 50px; margin-left: 160px;">
+            <a  class="btn" href="/enquete" style="margin-inline: 180px;margin-top: 80px;background-color: #261B14;color: #D98289;font-size: 50px;border-radius: 75px;">CLICK LA</a>
+        </div>
+        <div style="display:flex ; flex-direction:column; width: 50%;">
+            <h1 class="display-4 fw-bold" style="margin-top:100px;margin-right: 150px ;margin-bottom: 50px;">Sex'perimenter<br>avec un<br>jeu ludique</h1>
+            <img class="mshow" src="/static/img/loupe.png" width="200px" style="align-self: end;margin-right: 150px;">
+        </div>
+    </div>
+
+    <!-- ---------------------------------  Information  ---------------------------------- -->
+
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE A</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <p>L'hépatite A est une maladie infectieuse aiguë du foie causée par le virus de l'hépatite A (VHA)</p>
+            <p>Le virus de l’hépatite A se transmet dans des conditions d’hygiène précaires, par l’eau ou les aliments contaminés</p>
+        </div>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 90px 20px 20px 90px; padding: 30px; font-family:book antiqua;">
+            <p>L'hépatite B est une infection virale du foie due au virus B (VHB).</p>
+            <p> Elle est souvent asymptomatique, à l'origine de 1 500 décès par an en France. Plus de 3 millions de personnes auraient été en contact avec le virus de l'hépatite B, 280 000 porteurs chroniques. L’homme est le seul réservoir du VHB.</p>
+        </div>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE B</h1>
+        </div>
+        
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE C</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <p>L'hépatite C est une maladie infectieuse du foie causée par le virus de l'hépatite C (VHC)</p>
+            <p>C’est une infection souvent silencieuse, sans symptômes pourtant à l'origine de 2700 décès par an en France.</p>
+        </div>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 90px 20px 20px 90px; padding: 30px; font-family:book antiqua;">
+            <p>L’hépatite D est due à un co-virus du VHB, l'agent delta, qui ne touche que les personnes déjà contaminées par ce dernier. Les deux virus utilisent les mêmes voies de transmission.</p>
+            <p>Il n’existe aucun vaccin spécifique contre le virus D mais la vaccination contre l’hépatite B protège de l’hépatite D.</p>
+        </div>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE D</h1>
+        </div>
+        
+    </div>
+
+
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE E</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <p>L’hépatite E est une maladie infectieuse du foie due à un virus E (VHE) identifié pour la première fois en 1983.</p>
+            <p>Comme le VHA, le virus de l’hépatite E se transmet dans des conditions d’hygiène précaires, par l’eau ou les aliments contaminés.</p>
+        </div>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 90px 20px 20px 90px; padding: 30px; font-family:book antiqua;">
+            <p>L'hépatite G est due à un virus découvert en 1995 et désigné sous le nom de VHG.</p>
+            <p>Modes de transmission
+
+                L'hépatite G se transmet essentiellement par voie sanguine. Les principales personnes touchées sont les patients transfusés et les utilisateurs de drogues injectables (environ 2 % des donneurs de sang aux États-Unis, a priori en bonne santé, sont séropositifs pour le VHG).
+                
+                Évolution et symptômes
+                
+                L'hépatite G peut être aiguë ou chronique. Elle est asymptomatique le plus souvent et les malades n'ont généralement pas de symptômes. La majorité des patients immunocompétents semblent éliminer le VHG dans les premières années qui suivent l'infection mais le virus G peut persister longtemps dans le sang, des mois, voire des années. Les taux de transaminases restent soit normaux, soit modérément élevés.</p>
+        </div>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>HÉPATITE G</h1>
+        </div>
+        
+    </div>
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>Le gonorrhée</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <p>La gonorrhée est une infection sexuellement transmissible due à la bactérie appelée gonocoque.</p>
+            <p>Elle est aussi connue sous le nom de chaude-pisse ou blennorragie.</p>
+        </div>
+    </div>
+
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 90px 20px 20px 90px; padding: 30px; font-family:book antiqua;">
+            <p>L'abréviation VIH signifie virus de l'immunodéficience humaine.</p>
+            <p>Il s'agit d'un rétrovirus qui infecte les cellules du système immunitaire de l'être humain (en particulier les lymphocytes T CD4+ et les cellules macrophages essentielles au système immunitaire des cellules). Il détruit ou dérègle leur fonctionnement.</div>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>Le VIH</h1>
+        </div>
+        
+    </div>
+
+
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>La chlamydia</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <p>L'infection à Chlamydia (ou chlamydiose) est due à une bactérie appelée Chlamydia trachomatis. C'est l'une des infections sexuellement transmissibles (IST) les plus fréquentes.</p>
+            <p>L'infection ne provoque aucun symptôme dans 60 à 70 % des cas, elle est dite, dans ce cas, « silencieuse ».</p>
+        </div>
+    </div>
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 90px 20px 20px 90px; padding: 30px; font-family:book antiqua;">
+            <p>Le papillomavirus humain ou virus du papillome humain est un virus à ADN de la famille des Papillomaviridae.</p>
+            <p>On en connaît environ 200 génotypes différents ; certains se transmettent par contact cutané et infectent la peau, d'autres potentiellement plus dangereux sont sexuellement transmissibles.</div>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>Le papillomavirus</h1>
+        </div>
+        
+    </div>
+    <div class="text-center border-bottom" style="background-color:#8C503A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;">
+            <h1>Liens utiles</h1>
+        </div>
+        <div style="margin-right: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;border: solid; border-radius: 20px 90px 90px 20px; padding: 30px; font-family:book antiqua;">
+            <a class="lien" href="https://www.sida-info-service.org/" style="text-decoration:none;color:black;">https://www.sida-info-service.org/</a>
+            <a class="lien" href="https://www.sexualites-info-sante.fr/" style="text-decoration:none;color:black;">https://www.sexualites-info-sante.fr/</a>
+            <a class="lien" href="https://www.hepatites-info-service.org/" style="text-decoration:none;color:black;">https://www.hepatites-info-service.org/</a>
+            <a class="lien" href="https://www.vih-info-soignants.fr/" style="text-decoration:none;color:black;">https://www.vih-info-soignants.fr/</a>
+            <a class="lien" href="https://www.instagram.com/sida_info_service/?hl=fr" style="text-decoration:none;color:black;">https://www.instagram.com/sida_info_service/?hl=fr</a>
+            <a class="lien" href="https://www.instagram.com/sexualites_info_sante/?hl=fr" style="text-decoration:none;color:black;">https://www.instagram.com/sexualites_info_sante/?hl=fr</a>
+            <a class="lien" href="https://www.facebook.com/SidaInfoService" style="text-decoration:none;color:black;">https://www.facebook.com/SidaInfoService</a>
+        </div>
+    </div>
+    <div class="text-center border-bottom" style="background-color:#D9AB9A ;display: flex;justify-content: space-between;padding-bottom: 50px;">
+        <div style="margin-left: 100px;margin-top: 50px;display:flex ; flex-direction:column; width: 50%;text-align: start;">
+            <h1>Credit by</h1>
+        <div style="margin-top: 50px;display:flex ; flex-direction:column; width: 50%;border: solid; border-radius: 20px 0px 0px 20px; padding: 20px; font-family:book antiqua;">
+            <p>Marius DEVANNES / Bastien GRIVARD / Valentin Pradel / Rémi LE GUERNEVE / Maxime BODIN / Yi jun BOON</p>
+        </div>
+        
+    </div>
+</body>
+
+{% include 'chat.html' %}
+
+{% endblock %}

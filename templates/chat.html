@@ -1,0 +1,132 @@
+{% block chat %}
+    {% if chatIsActive %}
+        <style>
+            #chatContainer{
+                border: 1px solid black;
+                border-radius: 5px;;
+                background-color: white;
+                width: 300px;
+                height: 500px;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                margin: 10px;
+                padding: 15px;
+
+            }
+
+            #chatContainer-header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: 2px black solid;
+                border-width: 100%;
+            }
+
+            #chatContainer-title{
+                font-size: large;
+            }
+
+            #chatContainer-closeButton{
+                color: black;
+            }
+
+            #chatContainer-message{
+                background-color: lightgray;
+                margin-top: 5px;
+                margin-bottom: 2px;
+                height: 80%;
+            }
+
+            #chatContainer-textInput{
+                width: 100%;
+            }
+
+            #chatContainer-input{
+                display: flex;
+                align-items: center;
+            }
+
+            .chatContainer-messageBox{
+                border: 1px solid black;
+                padding: 5px;
+                margin: 5px;
+
+            }
+
+
+
+
+        </style>
+
+ 
+        
+
+
+        <div id="chatContainer">
+            <div id="chatContainer-header">
+                <div id="chatContainer-title">Chat</div>
+                
+                <a id="chatContainer-closeButton" href={{ path }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                    </svg>
+                </a>
+                
+            </div>
+
+            <div id="chatContainer-message" class="overflow-auto">
+
+                        <div class="chatContainer-messageBox alert alert-primary">
+                            Coucou
+                        </div>
+
+                
+            </div>
+
+            
+
+            <div id="chatContainer-input">
+                <div class="input-group" style="margin-top:5px ;">
+                    <a class="input-group-text" id="basic-addon1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path>
+                        </svg>
+                    </a>
+                    
+                    <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="basic-addon1">
+                  </div>
+            </div>
+            
+        </div>
+
+    {% else %}
+    <style>
+        #chatButton{
+            border: 2px black solid;
+            border-radius: 100px;
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            padding: 15px;
+            display: flex;
+            color: black;
+        }
+    </style>
+
+   
+
+    <a href={{path}}/active id="chatButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+            <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+    </a>
+    
+
+    {% endif %}
+{% endblock %}
